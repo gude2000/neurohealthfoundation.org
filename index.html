@@ -1125,8 +1125,6 @@ img, svg { max-width: 100%; display: block; }
   font-weight: 600;
 }
 .partner-card-logo {
-  background: #d8d0bb;
-  border: 1px solid #c8be9f;
   border-radius: 10px;
   padding: 14px 18px;
   display: flex;
@@ -1140,18 +1138,20 @@ img, svg { max-width: 100%; display: block; }
   width: auto;
   height: auto;
   display: block;
-  filter: drop-shadow(0 0 1.2px rgba(44,62,80,1))
-          drop-shadow(0 0 1.2px rgba(44,62,80,0.85))
-          drop-shadow(0 0 0.6px rgba(44,62,80,0.85));
+}
+/* Boise logo has thin white "BOISE" outline text — needs a darker backdrop
+   so the strokes stay visible at every size. No filter (keeps crisp). */
+.partner-card-logo--boise {
+  background: #c9bf9d;
+  border: 1px solid #b3a884;
+}
+/* Seattle logo reads well on a light, neutral surface. */
+.partner-card-logo--seattle {
+  background: var(--cream);
+  border: 1px solid var(--line);
 }
 @media (max-width: 720px) {
-  .partner-card-logo img {
-    max-width: 240px;
-    max-height: 80px;
-    filter: drop-shadow(0 0 1.6px rgba(44,62,80,1))
-            drop-shadow(0 0 1.6px rgba(44,62,80,1))
-            drop-shadow(0 0 0.8px rgba(44,62,80,0.9));
-  }
+  .partner-card-logo img { max-width: 240px; max-height: 80px; }
 }
 .partner-card p {
   color: var(--slate-soft);
@@ -1333,7 +1333,7 @@ img, svg { max-width: 100%; display: block; }
       <div class="partners-grid">
         <a class="partner-card" href="https://boiseneurofeedback.com" target="_blank" rel="noopener">
           <div class="partner-card-region">Treasure Valley · Boise, ID</div>
-          <div class="partner-card-logo">
+          <div class="partner-card-logo partner-card-logo--boise">
             <img src="boise-neurofeedback-logo.png" alt="Boise Neurofeedback" />
           </div>
           <p>Experienced clinicians serving the Treasure Valley with modern equipment and personalized neurofeedback protocols for every client we sponsor.</p>
@@ -1345,7 +1345,7 @@ img, svg { max-width: 100%; display: block; }
 
         <a class="partner-card" href="https://seattlenfb.com/" target="_blank" rel="noopener">
           <div class="partner-card-region">Greater Seattle · Washington</div>
-          <div class="partner-card-logo">
+          <div class="partner-card-logo partner-card-logo--seattle">
             <img src="seattle-neurofeedback-logo.png" alt="Seattle Neurofeedback" />
           </div>
           <p>Clinical neurofeedback care for the Greater Seattle area, providing personalized treatment for clients NeuroHealth Foundation sponsors in Washington state.</p>
