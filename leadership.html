@@ -1076,6 +1076,20 @@ img, svg { max-width: 100%; display: block; }
   .form-field input, .form-field textarea, .form-field select { border-color: #333 !important; }
 }
 
+
+.leader-portrait-photo {
+  padding: 0 !important;
+  overflow: hidden;
+  background: var(--cream-warm) !important;
+}
+.leader-portrait-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 50%;
+}
+
 </style>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%235b8c8a'/%3E%3C/svg%3E">
 </head>
@@ -1137,7 +1151,7 @@ img, svg { max-width: 100%; display: block; }
       </div>
 
       <div class="president-card leader-card">
-        <div class="leader-portrait">CG</div>
+        <div class="leader-portrait leader-portrait-photo"><img src="ciarai-gude.jpg" alt="Ciarai Gude, RN, BSN — President of NeuroHealth Foundation" /></div>
         <div>
           <div class="leader-name">Ciarai Gude, RN, BSN</div>
           <div class="leader-role">President</div>
