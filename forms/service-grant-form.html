@@ -1,0 +1,1364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Service Grant Form — NeuroHealth Foundation</title>
+  <meta name="description" content="Records services granted to scholarship recipients — sessions delivered and monetary amount awarded." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+/* ============================================================
+   NeuroHealth Foundation — Stylesheet
+   Palette: soft sage, warm cream, deep slate, gentle lavender
+   ============================================================ */
+
+:root {
+  --sage: #5b8c8a;
+  --sage-deep: #406e6c;
+  --sage-soft: #a8c7c2;
+  --cream: #f7f3ec;
+  --cream-warm: #efe9dc;
+  --slate: #2c3e50;
+  --slate-soft: #546473;
+  --lavender: #b8a9c9;
+  --gold: #c9a96a;
+  --ink: #1f2a36;
+  --muted: #6b7785;
+  --line: #e3dccf;
+  --white: #ffffff;
+  --shadow-sm: 0 1px 2px rgba(31, 42, 54, 0.06);
+  --shadow-md: 0 8px 24px rgba(31, 42, 54, 0.08);
+  --shadow-lg: 0 20px 50px rgba(31, 42, 54, 0.12);
+  --radius: 14px;
+  --radius-sm: 8px;
+  --maxw: 1180px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: "Inter", "Helvetica Neue", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  color: var(--ink);
+  background: var(--cream);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Cormorant Garamond", "Georgia", "Times New Roman", serif;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--slate);
+  margin: 0 0 0.5em;
+  line-height: 1.2;
+}
+
+h1 { font-size: clamp(2.2rem, 4.5vw, 3.6rem); }
+h2 { font-size: clamp(1.7rem, 3vw, 2.4rem); }
+h3 { font-size: 1.35rem; }
+
+p { margin: 0 0 1em; color: var(--slate-soft); }
+
+a { color: var(--sage-deep); text-decoration: none; transition: color .2s ease; }
+a:hover { color: var(--slate); }
+
+img, svg { max-width: 100%; display: block; }
+
+.container {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ============ HEADER / NAV ============ */
+
+.site-header {
+  background: var(--cream);
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(8px);
+  background: rgba(247, 243, 236, 0.92);
+}
+
+.nav-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  gap: 1rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+.brand-logo {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.brand-name {
+  font-family: "Cormorant Garamond", "Georgia", serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--slate);
+  letter-spacing: 0.01em;
+}
+
+.brand-tag {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--sage-deep);
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  padding: 0.55rem 1rem;
+  color: var(--slate);
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: var(--radius-sm);
+  transition: all .2s ease;
+}
+
+.nav-links a:hover {
+  background: var(--cream-warm);
+  color: var(--sage-deep);
+}
+
+.nav-links a.active {
+  color: var(--sage-deep);
+  background: var(--cream-warm);
+}
+
+.nav-cta {
+  background: var(--sage) !important;
+  color: var(--white) !important;
+  padding: 0.6rem 1.2rem !important;
+}
+
+.nav-cta:hover {
+  background: var(--sage-deep) !important;
+  color: var(--white) !important;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  color: var(--slate);
+}
+
+/* ============ HERO ============ */
+
+.hero {
+  position: relative;
+  padding: 5rem 0 6rem;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 80% 60% at 80% 20%, rgba(184, 169, 201, 0.18), transparent 60%),
+    radial-gradient(ellipse 60% 50% at 10% 90%, rgba(168, 199, 194, 0.25), transparent 60%),
+    var(--cream);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.hero-eyebrow {
+  display: inline-block;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--sage-deep);
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+  padding: 0.4rem 0.9rem;
+  background: rgba(91, 140, 138, 0.1);
+  border-radius: 100px;
+}
+
+.hero h1 {
+  margin-bottom: 1.2rem;
+}
+
+.hero h1 .accent {
+  font-style: italic;
+  color: var(--sage-deep);
+}
+
+.hero-lede {
+  font-size: 1.15rem;
+  color: var(--slate-soft);
+  margin-bottom: 2rem;
+  max-width: 32em;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ============ BUTTONS ============ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.6rem;
+  border-radius: 100px;
+  font-weight: 500;
+  font-size: 0.98rem;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all .2s ease;
+  font-family: inherit;
+}
+
+.btn-primary {
+  background: var(--sage);
+  color: var(--white);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+  background: var(--sage-deep);
+  color: var(--white);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--slate);
+  border: 1.5px solid var(--slate);
+}
+
+.btn-secondary:hover {
+  background: var(--slate);
+  color: var(--white);
+}
+
+.btn-ghost {
+  background: var(--cream-warm);
+  color: var(--slate);
+}
+
+.btn-ghost:hover {
+  background: var(--sage-soft);
+  color: var(--slate);
+}
+
+.btn svg { width: 18px; height: 18px; }
+
+/* ============ HERO VISUAL ============ */
+
+.hero-visual {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.hero-visual .blob {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--sage-soft) 0%, var(--lavender) 100%);
+  border-radius: 60% 40% 55% 45% / 55% 45% 55% 45%;
+  filter: blur(0.5px);
+  animation: morph 18s ease-in-out infinite;
+  opacity: 0.85;
+}
+
+@keyframes morph {
+  0%, 100% { border-radius: 60% 40% 55% 45% / 55% 45% 55% 45%; }
+  50% { border-radius: 45% 55% 45% 55% / 60% 40% 60% 40%; }
+}
+
+.hero-visual .brain-svg {
+  position: absolute;
+  inset: 12%;
+  width: 76%;
+  height: 76%;
+  filter: drop-shadow(0 12px 30px rgba(44, 62, 80, 0.18));
+}
+
+.hero-visual .float-dot {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--white);
+  box-shadow: var(--shadow-md);
+}
+
+.hero-visual .dot-1 { width: 70px; height: 70px; top: -10px; right: 10%; opacity: 0.9; }
+.hero-visual .dot-2 { width: 40px; height: 40px; bottom: 8%; left: -10px; background: var(--gold); }
+.hero-visual .dot-3 { width: 22px; height: 22px; top: 30%; right: -8px; background: var(--lavender); }
+
+/* ============ SECTIONS ============ */
+
+.section {
+  padding: 5rem 0;
+}
+
+.section-tight { padding: 3.5rem 0; }
+
+.section-cream { background: var(--cream); }
+.section-warm { background: var(--cream-warm); }
+.section-white { background: var(--white); }
+
+.section-head {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 3.5rem;
+}
+
+.section-head .eyebrow {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--sage-deep);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.8rem;
+}
+
+/* ============ MISSION CARD ============ */
+
+.mission-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 3rem 3rem;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.mission-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 6px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--sage), var(--lavender));
+}
+
+.mission-card .quote-mark {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 5rem;
+  color: var(--sage-soft);
+  line-height: 0.6;
+  margin-bottom: 0.5rem;
+}
+
+.mission-card p {
+  font-family: "Cormorant Garamond", "Georgia", serif;
+  font-size: 1.5rem;
+  font-style: italic;
+  color: var(--slate);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ============ PILLARS / VALUE GRID ============ */
+
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.8rem;
+}
+
+.pillar {
+  background: var(--white);
+  padding: 2.2rem 1.8rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.pillar:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.pillar-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--sage-soft), var(--sage));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+  color: var(--white);
+}
+
+.pillar-icon svg { width: 28px; height: 28px; }
+
+.pillar:nth-child(2) .pillar-icon { background: linear-gradient(135deg, var(--lavender), #8c79a8); }
+.pillar:nth-child(3) .pillar-icon { background: linear-gradient(135deg, #d9c285, var(--gold)); }
+
+.pillar h3 { margin-bottom: 0.4rem; }
+.pillar p { margin: 0; font-size: 0.96rem; }
+
+/* ============ PARTNER CTA ============ */
+
+.partner-banner {
+  background: linear-gradient(135deg, var(--slate) 0%, #1b2a3a 100%);
+  color: var(--white);
+  border-radius: var(--radius);
+  padding: 3rem;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.partner-banner::after {
+  content: "";
+  position: absolute;
+  right: -80px;
+  top: -80px;
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(circle, rgba(168, 199, 194, 0.25), transparent 70%);
+  border-radius: 50%;
+}
+
+.partner-banner h2 {
+  color: var(--white);
+  margin-bottom: 0.6rem;
+}
+
+.partner-banner p {
+  color: rgba(255, 255, 255, 0.78);
+  margin-bottom: 0;
+}
+
+.partner-banner .partner-cta {
+  text-align: right;
+  position: relative;
+  z-index: 1;
+}
+
+.partner-banner .btn-primary {
+  background: var(--sage-soft);
+  color: var(--slate);
+}
+
+.partner-banner .btn-primary:hover {
+  background: var(--white);
+  color: var(--slate);
+}
+
+/* ============ LEADERSHIP GRID ============ */
+
+.leader-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.leader-grid.three { grid-template-columns: repeat(3, 1fr); }
+
+.leader-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 2.4rem 2rem;
+  border: 1px solid var(--line);
+  text-align: center;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.leader-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.leader-portrait {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin: 0 auto 1.4rem;
+  background: linear-gradient(135deg, var(--sage-soft), var(--lavender));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2.4rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  box-shadow: var(--shadow-md);
+  border: 4px solid var(--white);
+}
+
+.leader-card:nth-child(2n) .leader-portrait { background: linear-gradient(135deg, var(--lavender), var(--sage)); }
+.leader-card:nth-child(3n) .leader-portrait { background: linear-gradient(135deg, var(--gold), #b88c4a); }
+
+.leader-name {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--slate);
+  margin-bottom: 0.2rem;
+}
+
+.leader-role {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--sage-deep);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.leader-bio {
+  font-size: 0.95rem;
+  color: var(--slate-soft);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.president-card {
+  background: linear-gradient(135deg, var(--white), var(--cream-warm));
+  padding: 3rem;
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 2.5rem;
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto 3rem;
+  border: 1px solid var(--line);
+}
+
+.president-card .leader-portrait {
+  width: 200px;
+  height: 200px;
+  font-size: 4rem;
+}
+
+.president-card .leader-name { font-size: 2rem; }
+
+/* ============ CONTACT / FORMS PAGE ============ */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.8rem;
+}
+
+.contact-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 2rem;
+  border: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.contact-card .icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--cream-warm);
+  color: var(--sage-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.8rem;
+}
+
+.contact-card .icon-wrap svg { width: 22px; height: 22px; }
+
+.contact-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.2rem;
+}
+
+.contact-card p, .contact-card a {
+  font-size: 0.96rem;
+  color: var(--slate-soft);
+  margin: 0;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+.contact-card a:hover { color: var(--sage-deep); }
+
+/* Donate */
+
+.donate-section {
+  background: linear-gradient(135deg, var(--sage) 0%, var(--sage-deep) 100%);
+  color: var(--white);
+  border-radius: var(--radius);
+  padding: 3.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.donate-section::before, .donate-section::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.donate-section::before { width: 300px; height: 300px; top: -100px; left: -100px; }
+.donate-section::after { width: 220px; height: 220px; bottom: -80px; right: -80px; }
+
+.donate-section h2 { color: var(--white); }
+.donate-section p { color: rgba(255, 255, 255, 0.85); max-width: 540px; margin: 0 auto 1.6rem; }
+
+.donate-section .btn-primary {
+  background: var(--white);
+  color: var(--sage-deep);
+  position: relative;
+  z-index: 1;
+}
+
+.donate-section .btn-primary:hover {
+  background: var(--cream);
+  color: var(--slate);
+}
+
+.donate-amounts {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.6rem;
+  position: relative;
+  z-index: 1;
+}
+
+.donate-amounts .amount-chip {
+  padding: 0.5rem 1.2rem;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 100px;
+  color: var(--white);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+/* Forms list */
+
+.forms-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.form-link {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 2rem;
+  display: flex;
+  gap: 1.2rem;
+  align-items: flex-start;
+  text-decoration: none;
+  transition: all .2s ease;
+}
+
+.form-link:hover {
+  transform: translateY(-2px);
+  border-color: var(--sage-soft);
+  box-shadow: var(--shadow-md);
+}
+
+.form-link .form-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: var(--cream-warm);
+  color: var(--sage-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.form-link .form-icon svg { width: 26px; height: 26px; }
+
+.form-link h3 {
+  margin-bottom: 0.3rem;
+  font-size: 1.2rem;
+}
+
+.form-link p {
+  margin: 0;
+  font-size: 0.94rem;
+}
+
+.form-link .form-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--sage-deep);
+  font-weight: 500;
+  font-size: 0.9rem;
+  margin-top: 0.6rem;
+}
+
+/* ============ FOOTER ============ */
+
+.site-footer {
+  background: var(--slate);
+  color: rgba(255, 255, 255, 0.75);
+  padding: 3.5rem 0 1.5rem;
+  margin-top: 4rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 1rem;
+}
+
+.footer-brand .brand-logo { width: 40px; height: 40px; }
+
+.footer-brand .brand-name { color: var(--white); font-size: 1.2rem; }
+
+.footer-grid p { color: rgba(255, 255, 255, 0.65); font-size: 0.92rem; }
+
+.footer-grid h4 {
+  color: var(--white);
+  font-family: inherit;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.footer-grid ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-grid ul li { margin-bottom: 0.55rem; }
+
+.footer-grid ul a {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.94rem;
+}
+
+.footer-grid ul a:hover { color: var(--sage-soft); }
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.86rem;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* ============ PAGE HEADER (subpages) ============ */
+
+.page-hero {
+  padding: 4rem 0 3rem;
+  text-align: center;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 100%, rgba(184, 169, 201, 0.18), transparent 60%),
+    var(--cream);
+}
+
+.page-hero .eyebrow {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--sage-deep);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.8rem;
+}
+
+.page-hero h1 { margin-bottom: 0.8rem; }
+
+.page-hero p {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1.08rem;
+}
+
+/* ============ FORM (printable) ============ */
+
+.form-page {
+  background: var(--white);
+  max-width: 8.5in;
+  margin: 2rem auto;
+  padding: 1in;
+  box-shadow: var(--shadow-md);
+  border-radius: 8px;
+}
+
+.form-page .form-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--sage);
+  padding-bottom: 1.2rem;
+  margin-bottom: 1.8rem;
+}
+
+.form-page .form-header .brand { gap: 0.6rem; }
+.form-page .form-header .brand-name { font-size: 1.1rem; }
+
+.form-page h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.2rem;
+}
+
+.form-page .form-subtitle {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--sage-deep);
+  font-weight: 600;
+}
+
+.form-section {
+  margin-bottom: 1.8rem;
+}
+
+.form-section h2 {
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--slate);
+  font-family: inherit;
+  font-weight: 600;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 1rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem 1.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.form-row.three { grid-template-columns: repeat(3, 1fr); }
+.form-row.full { grid-template-columns: 1fr; }
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-field label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--slate-soft);
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  border: none;
+  border-bottom: 1.5px solid var(--slate);
+  background: transparent;
+  padding: 0.4rem 0;
+  font-size: 0.98rem;
+  font-family: inherit;
+  color: var(--ink);
+  outline: none;
+}
+
+.form-field textarea {
+  border: 1px solid var(--line);
+  padding: 0.6rem;
+  min-height: 70px;
+  border-radius: 6px;
+  resize: vertical;
+}
+
+.form-field input:focus,
+.form-field textarea:focus,
+.form-field select:focus {
+  border-color: var(--sage);
+}
+
+.signature-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.signature-line {
+  border-top: 1px solid var(--slate);
+  padding-top: 0.4rem;
+  font-size: 0.75rem;
+  color: var(--slate-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.expense-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+.expense-table th {
+  text-align: left;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--slate-soft);
+  font-weight: 600;
+  padding: 0.5rem 0.6rem;
+  border-bottom: 2px solid var(--slate);
+}
+
+.expense-table td {
+  padding: 0.7rem 0.6rem;
+  border-bottom: 1px solid var(--line);
+  height: 32px;
+}
+
+.totals-row {
+  display: flex;
+  justify-content: flex-end;
+  gap: 2rem;
+  margin-top: 1.2rem;
+  font-size: 0.95rem;
+}
+
+.totals-row strong { color: var(--slate); }
+
+.form-actions {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.form-actions .btn { padding: 0.7rem 1.4rem; font-size: 0.92rem; }
+
+.form-note {
+  background: var(--cream-warm);
+  border-left: 3px solid var(--sage);
+  padding: 0.9rem 1.2rem;
+  border-radius: 4px;
+  font-size: 0.88rem;
+  color: var(--slate-soft);
+  margin-top: 1.8rem;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.92rem;
+  color: var(--sage-deep);
+  margin: 1.5rem 0;
+}
+
+/* ============ RESPONSIVE ============ */
+
+@media (max-width: 900px) {
+  .nav-toggle { display: flex; }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    background: var(--cream);
+    padding: 1rem;
+    border-bottom: 1px solid var(--line);
+    gap: 0.2rem;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { width: 100%; }
+
+  .hero-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .hero-visual { max-width: 360px; }
+  .hero { padding: 3rem 0 4rem; }
+
+  .pillars { grid-template-columns: 1fr; }
+  .leader-grid, .leader-grid.three { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .forms-list { grid-template-columns: 1fr; }
+  .partner-banner { grid-template-columns: 1fr; padding: 2rem; }
+  .partner-banner .partner-cta { text-align: left; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .president-card { grid-template-columns: 1fr; text-align: center; padding: 2rem; }
+  .president-card .leader-portrait { margin: 0 auto; }
+  .mission-card { padding: 2rem 1.5rem; }
+  .mission-card p { font-size: 1.2rem; }
+
+  .form-page { padding: 1.5rem; margin: 1rem; }
+  .form-row, .form-row.three { grid-template-columns: 1fr; }
+  .donate-section { padding: 2rem 1.5rem; }
+}
+
+@media (max-width: 520px) {
+  .footer-grid { grid-template-columns: 1fr; }
+  .brand-name { font-size: 1.1rem; }
+  .brand-tag { font-size: 0.62rem; }
+}
+
+/* ============ PRINT ============ */
+
+@media print {
+  .site-header, .site-footer, .back-link, .form-actions, .form-note { display: none !important; }
+  body { background: var(--white); }
+  .form-page { box-shadow: none; margin: 0; padding: 0.5in; max-width: 100%; }
+  .form-field input, .form-field textarea, .form-field select { border-color: #333 !important; }
+}
+
+</style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a href="../index.html" class="brand" aria-label="NeuroHealth Foundation home">
+        <svg class="brand-logo" width="44" height="44" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="brainGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#5b8c8a" />
+              <stop offset="100%" stop-color="#406e6c" />
+            </linearGradient>
+          </defs>
+          <circle cx="50" cy="50" r="46" fill="url(#brainGrad)" opacity="0.12" />
+          <path d="M48 22c-5 0-9 3-11 7-4 0-8 3-9 7-3 2-5 5-5 9 0 3 1 6 4 8-2 2-3 5-3 8 0 4 2 8 6 10 0 5 4 9 9 10 2 4 6 6 11 6 1-15 1-50-2-65z" fill="none" stroke="url(#brainGrad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M52 22c5 0 9 3 11 7 4 0 8 3 9 7 3 2 5 5 5 9 0 3-1 6-4 8 2 2 3 5 3 8 0 4-2 8-6 10 0 5-4 9-9 10-2 4-6 6-11 6-1-15-1-50 2-65z" fill="none" stroke="url(#brainGrad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="50" cy="14" r="2.4" fill="#c9a96a"/>
+          <line x1="50" y1="18" x2="50" y2="22" stroke="#c9a96a" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+        <span class="brand-text">
+          <span class="brand-name">NeuroHealth</span>
+          <span class="brand-tag">Foundation</span>
+        </span>
+      </a>
+
+      <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../leadership.html">Leadership</a></li>
+        <li><a href="../contact.html" class="active">Contact &amp; Forms</a></li>
+        <li><a href="../contact.html#donate" class="nav-cta">Donate</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <div class="container">
+    <a href="../contact.html#forms" class="back-link">
+      <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+      Back to Forms
+    </a>
+  </div>
+
+  <!-- FORM -->
+  <main class="form-page">
+    <div class="form-header">
+      <a href="../index.html" class="brand">
+        <svg class="brand-logo" width="44" height="44" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="formGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#5b8c8a" />
+              <stop offset="100%" stop-color="#406e6c" />
+            </linearGradient>
+          </defs>
+          <circle cx="50" cy="50" r="46" fill="url(#formGrad1)" opacity="0.12" />
+          <path d="M48 22c-5 0-9 3-11 7-4 0-8 3-9 7-3 2-5 5-5 9 0 3 1 6 4 8-2 2-3 5-3 8 0 4 2 8 6 10 0 5 4 9 9 10 2 4 6 6 11 6 1-15 1-50-2-65z" fill="none" stroke="url(#formGrad1)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M52 22c5 0 9 3 11 7 4 0 8 3 9 7 3 2 5 5 5 9 0 3-1 6-4 8 2 2 3 5 3 8 0 4-2 8-6 10 0 5-4 9-9 10-2 4-6 6-11 6-1-15-1-50 2-65z" fill="none" stroke="url(#formGrad1)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="50" cy="14" r="2.4" fill="#c9a96a"/>
+        </svg>
+        <span class="brand-text">
+          <span class="brand-name">NeuroHealth</span>
+          <span class="brand-tag">Foundation</span>
+        </span>
+      </a>
+      <div style="text-align:right;">
+        <h1>Service Grant Record</h1>
+        <div class="form-subtitle">Form NHF-100 · Internal Use</div>
+      </div>
+    </div>
+
+    <form id="grantForm" onsubmit="event.preventDefault(); window.print();">
+
+      <!-- GRANT INFO -->
+      <div class="form-section">
+        <h2>Grant Information</h2>
+        <div class="form-row three">
+          <div class="form-field">
+            <label for="grantNumber">Grant ID</label>
+            <input type="text" id="grantNumber" name="grantNumber" placeholder="NHF-2026-001" />
+          </div>
+          <div class="form-field">
+            <label for="dateAwarded">Date Awarded</label>
+            <input type="date" id="dateAwarded" name="dateAwarded" />
+          </div>
+          <div class="form-field">
+            <label for="grantStatus">Status</label>
+            <select id="grantStatus" name="grantStatus">
+              <option value="">— Select —</option>
+              <option>Approved</option>
+              <option>In Progress</option>
+              <option>Completed</option>
+              <option>Closed</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- RECIPIENT -->
+      <div class="form-section">
+        <h2>Recipient Information</h2>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="recipientName">Full Name</label>
+            <input type="text" id="recipientName" name="recipientName" />
+          </div>
+          <div class="form-field">
+            <label for="recipientDob">Date of Birth</label>
+            <input type="date" id="recipientDob" name="recipientDob" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="recipientPhone">Phone</label>
+            <input type="tel" id="recipientPhone" name="recipientPhone" />
+          </div>
+          <div class="form-field">
+            <label for="recipientEmail">Email</label>
+            <input type="email" id="recipientEmail" name="recipientEmail" />
+          </div>
+        </div>
+        <div class="form-row full">
+          <div class="form-field">
+            <label for="recipientAddress">Mailing Address</label>
+            <input type="text" id="recipientAddress" name="recipientAddress" placeholder="Street, City, ID ZIP" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="referredBy">Referred By</label>
+            <input type="text" id="referredBy" name="referredBy" placeholder="Provider, school, agency, self" />
+          </div>
+          <div class="form-field">
+            <label for="needCategory">Need Category</label>
+            <select id="needCategory" name="needCategory">
+              <option value="">— Select —</option>
+              <option>Pediatric</option>
+              <option>Adolescent</option>
+              <option>Adult</option>
+              <option>Veteran</option>
+              <option>Senior</option>
+              <option>Family member of provider</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- SERVICES GRANTED -->
+      <div class="form-section">
+        <h2>Services Granted</h2>
+        <div class="form-row three">
+          <div class="form-field">
+            <label for="provider">Service Provider</label>
+            <input type="text" id="provider" name="provider" value="Boise Neurofeedback" />
+          </div>
+          <div class="form-field">
+            <label for="protocol">Protocol / Service Type</label>
+            <input type="text" id="protocol" name="protocol" placeholder="e.g. Neurofeedback — alpha/theta" />
+          </div>
+          <div class="form-field">
+            <label for="ratePerSession">Rate per Session ($)</label>
+            <input type="number" id="ratePerSession" name="ratePerSession" min="0" step="0.01" oninput="calcGrantTotal()" />
+          </div>
+        </div>
+        <div class="form-row three">
+          <div class="form-field">
+            <label for="sessionsApproved">Sessions Approved</label>
+            <input type="number" id="sessionsApproved" name="sessionsApproved" min="0" step="1" oninput="calcGrantTotal()" />
+          </div>
+          <div class="form-field">
+            <label for="sessionsCompleted">Sessions Completed</label>
+            <input type="number" id="sessionsCompleted" name="sessionsCompleted" min="0" step="1" />
+          </div>
+          <div class="form-field">
+            <label for="totalAwarded">Total Amount Awarded ($)</label>
+            <input type="number" id="totalAwarded" name="totalAwarded" min="0" step="0.01" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="startDate">Service Start Date</label>
+            <input type="date" id="startDate" name="startDate" />
+          </div>
+          <div class="form-field">
+            <label for="endDate">Service End Date</label>
+            <input type="date" id="endDate" name="endDate" />
+          </div>
+        </div>
+        <div class="form-row full">
+          <div class="form-field">
+            <label for="notes">Notes / Clinical Outcome</label>
+            <textarea id="notes" name="notes" rows="3" placeholder="Brief narrative — outcomes observed, follow-up needs, family feedback."></textarea>
+          </div>
+        </div>
+      </div>
+
+      <!-- AUTHORIZATION -->
+      <div class="form-section">
+        <h2>Authorization</h2>
+        <div class="signature-row">
+          <div>
+            <input type="text" placeholder="Type or sign" style="border:none; border-bottom: 1.5px solid var(--slate); padding: 0.4rem 0; width: 100%; font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-style: italic; outline: none;" />
+            <div class="signature-line">Authorized Officer · NeuroHealth Foundation</div>
+          </div>
+          <div>
+            <input type="date" style="border:none; border-bottom: 1.5px solid var(--slate); padding: 0.4rem 0; width: 100%; outline: none;" />
+            <div class="signature-line">Date</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-note">
+        <strong>Internal record.</strong> This form documents services granted by NeuroHealth Foundation in fulfillment of its 501(c)(3) charitable mission. Retain for IRS Form 990 reporting and annual program disclosures.
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          Print / Save as PDF
+        </button>
+        <button type="reset" class="btn btn-ghost">Clear Form</button>
+      </div>
+
+    </form>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <svg class="brand-logo" width="44" height="44" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="50" cy="50" r="46" fill="#5b8c8a" opacity="0.18"/>
+              <path d="M48 22c-5 0-9 3-11 7-4 0-8 3-9 7-3 2-5 5-5 9 0 3 1 6 4 8-2 2-3 5-3 8 0 4 2 8 6 10 0 5 4 9 9 10 2 4 6 6 11 6 1-15 1-50-2-65z" fill="none" stroke="#a8c7c2" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M52 22c5 0 9 3 11 7 4 0 8 3 9 7 3 2 5 5 5 9 0 3-1 6-4 8 2 2 3 5 3 8 0 4-2 8-6 10 0 5-4 9-9 10-2 4-6 6-11 6-1-15-1-50 2-65z" fill="none" stroke="#a8c7c2" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="50" cy="14" r="2.4" fill="#c9a96a"/>
+            </svg>
+            <span class="brand-name">NeuroHealth Foundation</span>
+          </div>
+          <p>A 501(c)(3) non-profit serving the Treasure Valley of Boise, Idaho.</p>
+        </div>
+        <div>
+          <h4>Pages</h4>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../leadership.html">Leadership</a></li>
+            <li><a href="../contact.html">Contact &amp; Forms</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="../contact.html#donate">Donate</a></li>
+            <li><a href="service-grant-form.html">Service Grant Form</a></li>
+            <li><a href="expense-catalog-form.html">Expense Form</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Partners</h4>
+          <ul>
+            <li><a href="https://boiseneurofeedback.com" target="_blank" rel="noopener">Boise Neurofeedback</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 NeuroHealth Foundation. All rights reserved.</span>
+        <span>Boise, Idaho · EIN available upon request</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function calcGrantTotal() {
+      const rate = parseFloat(document.getElementById('ratePerSession').value) || 0;
+      const sessions = parseFloat(document.getElementById('sessionsApproved').value) || 0;
+      const total = (rate * sessions).toFixed(2);
+      if (rate && sessions) {
+        document.getElementById('totalAwarded').value = total;
+      }
+    }
+  </script>
+
+</body>
+</html>
