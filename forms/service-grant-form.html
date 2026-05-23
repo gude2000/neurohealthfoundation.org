@@ -1088,6 +1088,20 @@ input[type="number"] {
   appearance: textfield;
 }
 
+
+/* ===== Safari overflow fix for form fields ===== */
+.form-field {
+  min-width: 0;
+}
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
 </style>
 </head>
 <body>
