@@ -1141,6 +1141,18 @@ img, svg { max-width: 100%; display: block; }
   .form-page { padding: 1rem !important; max-width: 100% !important; }
 }
 
+
+/* Hide native number-input spinner arrows */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
 </style>
 </head>
 <body>

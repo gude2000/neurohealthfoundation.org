@@ -1076,6 +1076,18 @@ img, svg { max-width: 100%; display: block; }
   .form-field input, .form-field textarea, .form-field select { border-color: #333 !important; }
 }
 
+
+/* Hide native number-input spinner arrows */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
 </style>
 </head>
 <body>
