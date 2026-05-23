@@ -1076,6 +1076,27 @@ img, svg { max-width: 100%; display: block; }
   .form-field input, .form-field textarea, .form-field select { border-color: #333 !important; }
 }
 
+
+.donate-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.8rem;
+  position: relative;
+  z-index: 1;
+}
+.donate-section .btn-monthly {
+  background: var(--cream-warm) !important;
+  color: var(--sage-deep) !important;
+}
+.donate-section .btn-monthly:hover {
+  background: var(--white) !important;
+  color: var(--slate) !important;
+}
+.donate-section .btn-monthly svg {
+  color: #c47474;
+}
+
 </style>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%235b8c8a'/%3E%3C/svg%3E">
 </head>
@@ -1172,7 +1193,7 @@ img, svg { max-width: 100%; display: block; }
       <div class="donate-section">
         <span class="hero-eyebrow" style="background: rgba(255,255,255,0.14); color: var(--white);">501(c)(3) Tax-Deductible</span>
         <h2>Fund a session. Change a life.</h2>
-        <p>Your gift directly underwrites neurofeedback sessions for children, veterans, and families in the Treasure Valley and the Greater Seattle area who could not otherwise afford care. 100% local. 100% tax-deductible.</p>
+        <p>Your gift — one-time or monthly — directly underwrites neurofeedback sessions for children, veterans, and families in the Treasure Valley and the Greater Seattle area who could not otherwise afford care. 100% local. 100% tax-deductible.</p>
 
         <div class="donate-amounts">
           <span class="amount-chip">$50 · one session</span>
@@ -1181,10 +1202,16 @@ img, svg { max-width: 100%; display: block; }
           <span class="amount-chip">$1,000 · a full course</span>
         </div>
 
-        <a href="https://donate.stripe.com/28E14pfsY9xvbtz5Rr6Vq07" target="_blank" rel="noopener" class="btn btn-primary">
-          Donate Securely Online
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
+        <div class="donate-buttons">
+          <a href="https://donate.stripe.com/28E14pfsY9xvbtz5Rr6Vq07" target="_blank" rel="noopener" class="btn btn-primary">
+            Give Once
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="https://buy.stripe.com/9B600l94A9xvcxDbbL6Vq08" target="_blank" rel="noopener" class="btn btn-primary btn-monthly">
+            <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            Give Monthly
+          </a>
+        </div>
       </div>
 
       <div style="text-align:center; margin-top: 2rem; color: var(--slate-soft); font-size: 0.95rem;">
