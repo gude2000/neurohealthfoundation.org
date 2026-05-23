@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NeuroHealth Foundation — Accessible Neurofeedback for the Treasure Valley</title>
-  <meta name="description" content="NeuroHealth Foundation is a 501(c)(3) non-profit providing neurofeedback services, scholarships, and funding support to underserved populations in the Treasure Valley, Boise, Idaho." />
+  <title>NeuroHealth Foundation — Accessible Neurofeedback for the Treasure Valley &amp; Greater Seattle</title>
+  <meta name="description" content="NeuroHealth Foundation is a 501(c)(3) non-profit providing neurofeedback services, scholarships, and funding support to underserved populations in the Treasure Valley of Boise, Idaho and the Greater Seattle area of Washington." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -1094,6 +1094,74 @@ img, svg { max-width: 100%; display: block; }
           drop-shadow(0 0 0.6px rgba(44,62,80,0.85));
 }
 
+
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.6rem;
+}
+.partner-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 2rem 1.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  text-decoration: none;
+  color: inherit;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.partner-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--sage-soft);
+  box-shadow: 0 14px 32px rgba(31, 42, 54, 0.10);
+}
+.partner-card-region {
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--sage-deep);
+  font-weight: 600;
+}
+.partner-card-logo {
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 96px;
+}
+.partner-card-logo img {
+  max-width: 220px;
+  max-height: 72px;
+  width: auto;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 0 0.6px rgba(44,62,80,0.85))
+          drop-shadow(0 0 0.6px rgba(44,62,80,0.85));
+}
+.partner-card p {
+  color: var(--slate-soft);
+  font-size: 0.96rem;
+  margin: 0;
+  flex-grow: 1;
+}
+.partner-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--sage-deep);
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-top: 0.4rem;
+}
+@media (max-width: 720px) {
+  .partners-grid { grid-template-columns: 1fr; }
+}
+
 </style>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%235b8c8a'/%3E%3Cpath d='M35 30c-6 0-10 5-10 10 0 3 1 5 3 7-2 2-3 4-3 7 0 5 4 10 10 10' stroke='%23fff' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3Cpath d='M65 30c6 0 10 5 10 10 0 3-1 5-3 7 2 2 3 4 3 7 0 5-4 10-10 10' stroke='%23fff' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3Cline x1='50' y1='28' x2='50' y2='72' stroke='%23fff' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
 </head>
@@ -1146,10 +1214,10 @@ img, svg { max-width: 100%; display: block; }
   <section class="hero">
     <div class="container hero-grid">
       <div class="hero-copy">
-        <span class="hero-eyebrow">Treasure Valley · Boise, Idaho</span>
+        <span class="hero-eyebrow">Treasure Valley · Greater Seattle</span>
         <h1>Healing minds,<br><span class="accent">restoring lives.</span></h1>
         <p class="hero-lede">
-          We bring neurofeedback therapy within reach for families across the Treasure Valley — through scholarships, funding, and partnerships with trusted local providers.
+          We bring neurofeedback therapy within reach for families across the Treasure Valley and the Greater Seattle area — through scholarships, funding, and partnerships with trusted local providers.
         </p>
         <div class="hero-actions">
           <a href="#mission" class="btn btn-primary">
@@ -1202,7 +1270,7 @@ img, svg { max-width: 100%; display: block; }
       <div class="mission-card">
         <div class="quote-mark">"</div>
         <p>
-          NeuroHealth Foundation provides neurofeedback services, scholarships, and funding support to underserved populations in the Treasure Valley of Boise, Idaho — opening doors to healing that has too often been out of reach.
+          NeuroHealth Foundation provides neurofeedback services, scholarships, and funding support to underserved populations in the Treasure Valley of Boise, Idaho and the Greater Seattle area of Washington — opening doors to healing that has too often been out of reach.
         </p>
       </div>
     </div>
@@ -1244,24 +1312,38 @@ img, svg { max-width: 100%; display: block; }
     </div>
   </section>
 
-  <!-- PARTNER / SERVICES -->
+  <!-- PARTNER CLINICS -->
   <section class="section section-warm">
     <div class="container">
-      <div class="partner-banner">
-        <div>
-          <span class="hero-eyebrow" style="background: rgba(255,255,255,0.12); color: var(--sage-soft);">Clinical Partner</span>
-          <div class="partner-logo">
+      <div class="section-head">
+        <span class="eyebrow">Clinical Partners</span>
+        <h2>Care delivered by trusted local clinics.</h2>
+      </div>
+
+      <div class="partners-grid">
+        <a class="partner-card" href="https://boiseneurofeedback.com" target="_blank" rel="noopener">
+          <div class="partner-card-region">Treasure Valley · Boise, ID</div>
+          <div class="partner-card-logo">
             <img src="boise-neurofeedback-logo.png" alt="Boise Neurofeedback" />
           </div>
-          <h2>Services delivered by Boise Neurofeedback.</h2>
-          <p>We fund the care. Boise Neurofeedback provides it — with experienced clinicians, modern equipment, and personalized protocols for every client we sponsor.</p>
-        </div>
-        <div class="partner-cta">
-          <a href="https://boiseneurofeedback.com" class="btn btn-primary" target="_blank" rel="noopener">
+          <p>Experienced clinicians serving the Treasure Valley with modern equipment and personalized neurofeedback protocols for every client we sponsor.</p>
+          <span class="partner-card-link">
             Visit boiseneurofeedback.com
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
-          </a>
-        </div>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+          </span>
+        </a>
+
+        <a class="partner-card" href="https://seattlenfb.com/" target="_blank" rel="noopener">
+          <div class="partner-card-region">Greater Seattle · Washington</div>
+          <div class="partner-card-logo">
+            <img src="seattle-neurofeedback-logo.png" alt="Seattle Neurofeedback" />
+          </div>
+          <p>Clinical neurofeedback care for the Greater Seattle area, providing personalized treatment for clients NeuroHealth Foundation sponsors in Washington state.</p>
+          <span class="partner-card-link">
+            Visit seattlenfb.com
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+          </span>
+        </a>
       </div>
     </div>
   </section>
@@ -1272,7 +1354,7 @@ img, svg { max-width: 100%; display: block; }
       <div class="donate-section">
         <span class="hero-eyebrow" style="background: rgba(255,255,255,0.14); color: var(--white);">501(c)(3) Tax-Deductible</span>
         <h2>Every gift opens a door.</h2>
-        <p>A single session can shift a child's school year. A full course of treatment can change the trajectory of a family. Your donation is fully tax-deductible and stays in the Treasure Valley.</p>
+        <p>A single session can shift a child's school year. A full course of treatment can change the trajectory of a family. Your donation is fully tax-deductible and stays in the communities we serve — the Treasure Valley and Greater Seattle.</p>
         <div class="donate-amounts">
           <span class="amount-chip">$50</span>
           <span class="amount-chip">$150</span>
@@ -1302,7 +1384,7 @@ img, svg { max-width: 100%; display: block; }
             </svg>
             <span class="brand-name">NeuroHealth Foundation</span>
           </div>
-          <p>A 501(c)(3) non-profit serving the Treasure Valley of Boise, Idaho.</p>
+          <p>A 501(c)(3) non-profit serving the Treasure Valley of Boise, Idaho and the Greater Seattle area of Washington.</p>
         </div>
         <div>
           <h4>Pages</h4>
