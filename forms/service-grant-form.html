@@ -1232,7 +1232,12 @@ img, svg { max-width: 100%; display: block; }
         <div class="form-row three">
           <div class="form-field">
             <label for="provider">Service Provider</label>
-            <input type="text" id="provider" name="provider" value="Boise Neurofeedback" />
+            <select id="provider" name="provider">
+              <option value="">— Select —</option>
+              <option>Boise Neurofeedback</option>
+              <option>Seattle Neurofeedback</option>
+              <option>Other</option>
+            </select>
           </div>
           <div class="form-field">
             <label for="protocol">Protocol / Service Type</label>
