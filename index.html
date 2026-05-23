@@ -1125,8 +1125,8 @@ img, svg { max-width: 100%; display: block; }
   font-weight: 600;
 }
 .partner-card-logo {
-  background: var(--cream);
-  border: 1px solid var(--line);
+  background: #d8d0bb;
+  border: 1px solid #c8be9f;
   border-radius: 10px;
   padding: 14px 18px;
   display: flex;
@@ -1140,8 +1140,18 @@ img, svg { max-width: 100%; display: block; }
   width: auto;
   height: auto;
   display: block;
-  filter: drop-shadow(0 0 0.6px rgba(44,62,80,0.85))
+  filter: drop-shadow(0 0 1.2px rgba(44,62,80,1))
+          drop-shadow(0 0 1.2px rgba(44,62,80,0.85))
           drop-shadow(0 0 0.6px rgba(44,62,80,0.85));
+}
+@media (max-width: 720px) {
+  .partner-card-logo img {
+    max-width: 240px;
+    max-height: 80px;
+    filter: drop-shadow(0 0 1.6px rgba(44,62,80,1))
+            drop-shadow(0 0 1.6px rgba(44,62,80,1))
+            drop-shadow(0 0 0.8px rgba(44,62,80,0.9));
+  }
 }
 .partner-card p {
   color: var(--slate-soft);
