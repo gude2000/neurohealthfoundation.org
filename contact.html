@@ -1097,6 +1097,19 @@ img, svg { max-width: 100%; display: block; }
   color: #c47474;
 }
 
+
+.donate-amounts a.amount-chip-link {
+  text-decoration: none;
+  transition: background .2s ease, transform .15s ease, border-color .2s ease;
+  cursor: pointer;
+}
+.donate-amounts a.amount-chip-link:hover {
+  background: rgba(255,255,255,0.22);
+  border-color: rgba(255,255,255,0.45);
+  transform: translateY(-1px);
+  color: var(--white);
+}
+
 </style>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%235b8c8a'/%3E%3C/svg%3E">
 </head>
@@ -1196,7 +1209,7 @@ img, svg { max-width: 100%; display: block; }
         <p>Your gift — one-time or monthly — directly underwrites neurofeedback sessions for children, veterans, and families in the Treasure Valley and the Greater Seattle area who could not otherwise afford care. 100% local. 100% tax-deductible.</p>
 
         <div class="donate-amounts">
-          <span class="amount-chip">$150 · one session</span>
+          <a href="https://donate.stripe.com/eVq9AVcgMcJH69fenX6Vq09" target="_blank" rel="noopener" class="amount-chip amount-chip-link">$150 · one session</a>
           <span class="amount-chip">$450 · three sessions</span>
           <span class="amount-chip">$1,500 · ten sessions</span>
         </div>
